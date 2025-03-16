@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Get the database URL from environment variables (Render will set this)
 # For local development, you'll need to set this manually
-DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://jtwmd_user:L75MSof3zNduhuR5uTZzIpwgmvagaKfX@dpg-cvbik6rqf0us73d9jnig-a.oregon-postgres.render.com/jtwmd')
+DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://jtwmd_user:L75MSof3zNduhuR5uTZzIpwgmvagaKfX@dpg-cvbik6rqf0us73d9jnig-a/jtwmd')
 
 
 @app.route('/')
