@@ -1,6 +1,7 @@
+from flask import Flask, render_template
+import psycopg2
 import os
 
-from flask import Flask
 app = Flask(__name__)
 
 # Get the database URL from environment variables (Render will set this)
