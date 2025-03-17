@@ -4,15 +4,16 @@ import os
 
 app = Flask(__name__)
 
-# Get the database URL from environment variables (Render will set this)
-# For local development, you'll need to set this manually
+# Database URL
+
 DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://jtwmd_user:L75MSof3zNduhuR5uTZzIpwgmvagaKfX@dpg-cvbik6rqf0us73d9jnig-a/jtwmd')
 
 
+#hello page
 @app.route('/')
 def hello_world():
     return 'Hello, World! from Jason Terrance Wells, MD in 3308'
-
+#connection functional
 @app.route('/db_test')
 def db_test():
     try:
@@ -21,7 +22,7 @@ def db_test():
         return "Database connection successful!"
     except Exception as e:
         return f"Database connection failed: {str(e)}"
-
+#create db
 @app.route('/db_create')
 def db_create():
     conn = None
@@ -44,7 +45,7 @@ def db_create():
     finally:
         if conn:
             conn.close()
-
+#insert data in db
 @app.route('/db_insert')
 def db_insert():
     conn = None
@@ -68,6 +69,7 @@ def db_insert():
         if conn:
             conn.close()
 
+#show data that has been inserted
 @app.route('/db_select')
 def db_select():
     conn = None
@@ -95,6 +97,7 @@ def db_select():
         if conn:
             conn.close()
 
+#Delete database to allow for other data to be added
 @app.route('/db_drop')
 def db_drop():
     conn = None
